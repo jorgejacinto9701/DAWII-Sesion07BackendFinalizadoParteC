@@ -60,8 +60,8 @@ public class DocenteController {
 			@RequestParam(name = "dni", required = false, defaultValue = "") String dni,
 			@RequestParam(name = "idUbigeo", required = false, defaultValue = "-1") int idUbigeo,
 			@RequestParam(name = "estado", required = true, defaultValue = "1") int estado,
-			@RequestParam(name = "fechaInicio", required = false, defaultValue = "") String fechaInicio,
-			@RequestParam(name = "fechaFin", required = false, defaultValue = "") String fechaFin) {
+			@RequestParam(name = "fechaInicio", required = false, defaultValue = "9999-01-01") String fechaInicio,
+			@RequestParam(name = "fechaFin", required = false, defaultValue = "9999-01-01") String fechaFin) {
 		Map<String, Object> salida = new HashMap<>();
 		try {
 			List<Docente> lista = docenteService.listaDocentePorNombreDniUbigeo("%"+nombre+"%", dni, idUbigeo, estado,fechaInicio, fechaFin);
